@@ -1,0 +1,18 @@
+clear all;  clc;
+w=4000;
+Dim=2;   num_nodes=3;    num_element=2;
+xy=xlsread('Beam.xlsx','A:C');
+connections=xlsread('Beam.xlsx','D:F');
+I=xlsread('Beam.xlsx','G:G');
+Elasticity=xlsread('Beam.xlsx','H:H');
+DOF=Dim*num_nodes;
+Force(1:DOF,1)=0;
+Force(1)=-15000;Force(2)=-25000; Force(3)=-45000; Force(4)=-75000;Force(5)=-30000; Force(6)=100000;
+BC(1:DOF,1)=1;
+BC(1:2:6)=0;
+k=zeros(DOF);
+[Length,Slope]=Length_Slope(xy,num_element,connections);
+k=Global_Stiffness(num_element,DOF,Slope,Length,I,Elasticity,connections);
+[newxy,Force]=Prim_solve(DOF,num_nodes,xy,k,BC,Force)
+Plot(num_element,connections,newxy,xy)
+title(['\fontsize{16}Problem #28'])
