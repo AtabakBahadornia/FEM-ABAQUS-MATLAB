@@ -1,0 +1,709 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=400.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    75.0, 110.0))
+mdb.models['Model-1'].sketches['__profile__'].ConstructionLine(point1=(-110.0, 
+    -20.0), point2=(87.5, -20.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].FixedConstraint(entity=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -51.5592193603516, 102.348739624023), value=126.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    74.0522003173828, 19.7543640136719), value=60.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(63.0, 
+    109.119200876839), point2=(135.0, 109.119200876839))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[4])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(63.0, 
+    109.119200876839), point2=(20.0, 109.119200876839))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[5])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(51.9615242270665, 
+    90.0), point2=(64.6457815337926, 82.6767406295985))
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[6])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    54.8842163085938, 68.002571105957), value=10.8, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    22.6657104492188, 121.157363891602), value=36.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(54.3530743609062, 
+    72.5422863406588), point2=(30.0, -10.0))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[7], ))
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    22.2728722364991, -12.8592487813585))
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -25.1330871582031, -61.1191253662109), value=27.6, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(54.3530743609062, 
+    72.5422863406588), point2=(23.9023011444553, -13.8))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], ))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    8.32698059082031, -9.70662307739258), value=27.6, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    116.377075195313, -0.704189300537109), value=91.5545738890777, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    55.0189819335938, -7.90613555908203), value=70.5735234185541)
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].dimensions[4], ))
+mdb.models['Model-1'].sketches['__profile__'].delete(objectList=(
+    mdb.models['Model-1'].sketches['__profile__'].geometry[8], ))
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    0.0753555297851563, -9.14175796508789), value=27.6, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[7])
+mdb.models['Model-1'].sketches['__profile__'].AngularDimension(line1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[9], line2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3], textPoint=(
+    43.0220794677734, -20.4283103942871), value=109.426476581446)
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    91.335563659668, 89.0133514404297), value=108.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    38.9695434570313, 97.5747756958008), value=36.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseWire(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Material-1')
+mdb.models['Model-1'].materials['Material-1'].Elastic(table=((21500000.0, 
+    0.29), ))
+mdb.models['Model-1'].BoxProfile(a=16.0, b=4.0, name='Ac', t1=0.25, 
+    uniformThickness=ON)
+mdb.models['Model-1'].BoxProfile(a=10.0, b=10.0, name='BF', t1=0.5, 
+    uniformThickness=ON)
+mdb.models['Model-1'].TrussSection(area=1.0, material='Material-1', name=
+    'Truss')
+mdb.models['Model-1'].BeamSection(alphaDamping=0.0, beamSectionOffset=(0.0, 
+    0.0), beamShape=CONSTANT, betaDamping=0.0, compositeDamping=0.0, 
+    consistentMassMatrix=False, dependencies=0, integration=BEFORE_ANALYSIS, 
+    name='AC', poissonRatio=0.29, profile='BF', table=((21500000.0, 
+    10400000.0), ), temperatureDependency=OFF, thermalExpansion=OFF)
+mdb.models['Model-1'].sections['AC'].setValues(alphaDamping=0.0, 
+    beamSectionOffset=(0.0, 0.0), betaDamping=0.0, compositeDamping=0.0, 
+    dependencies=0, poissonRatio=0.29, profile='Ac', table=((21500000.0, 
+    10400000.0), ), temperatureDependency=OFF, thermalExpansion=OFF)
+mdb.models['Model-1'].BeamSection(alphaDamping=0.0, beamSectionOffset=(0.0, 
+    0.0), beamShape=CONSTANT, betaDamping=0.0, compositeDamping=0.0, 
+    consistentMassMatrix=False, dependencies=0, integration=BEFORE_ANALYSIS, 
+    name='BF', poissonRatio=0.29, profile='BF', table=((21500000.0, 
+    10400000.0), ), temperatureDependency=OFF, thermalExpansion=OFF)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#30 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-1'], sectionName='AC', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#d ]', 
+    ), ), name='Set-2')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-2'], sectionName='BF', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#2 ]', 
+    ), ), name='Set-3')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-3'], sectionName='Truss', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=OFF, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].rootAssembly.Set(name='Set-1', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#c ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-1'], u1=0.0, 
+    u2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-2', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-2500.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-2'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-3', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-7500.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-2', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-3'])
+mdb.models['Model-1'].loads['Load-2'].setValues(cf1=1000.0, distributionType=
+    UNIFORM, field='')
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=B22, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#3d ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=T2D2, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ), size=100.0)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ))
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='63', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#3d ]', 
+    ), ), name='Set-4')
+mdb.models['Model-1'].parts['Part-1'].assignBeamSectionOrientation(method=
+    N1_COSINES, n1=(0.0, 0.0, -1.0), region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-4'])
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 7828, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 20:51:14 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].rootAssembly.deleteMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ))
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[2]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0]
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#30 ]', 
+    ), ), name='Set-5')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-5'], sectionName='AC', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#c ]', 
+    ), ), name='Set-6')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-6'], sectionName='BF', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#3 ]', 
+    ), ), name='Set-7')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-7'], sectionName='Truss', 
+    thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+del mdb.models['Model-1'].rootAssembly.features['Part-1-1']
+mdb.models['Model-1'].rootAssembly.Instance(dependent=OFF, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=B21, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#3c ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.setElementType(elemTypes=(ElemType(
+    elemCode=T2D2, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].edges.getSequenceFromMask(
+    ('[#3 ]', ), ), ))
+mdb.models['Model-1'].rootAssembly.seedPartInstance(deviationFactor=0.1, 
+    minSizeFactor=0.1, regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ), size=100.0)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ))
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "63.inp", line 103: Unknown assembly node set SET-1', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "63.inp", line 103: Unknown assembly node set SET-1', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'in keyword *BOUNDARY, file "63.inp", line 103: Unknown assembly node set SET-1', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-1 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-1 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'A BOUNDARY CONDITION HAS BEEN SPECIFIED ON NODE SET ASSEMBLY_SET-1 BUT THIS NODE SET IS NOT ACTIVE IN THE MODEL', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'NODE SET ASSEMBLY_SET-1 HAS NOT BEEN DEFINED', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': '63'})
+del mdb.models['Model-1'].loads['Load-2']
+del mdb.models['Model-1'].loads['Load-1']
+mdb.jobs['63']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': '63'})
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+mdb.models['Model-1'].rootAssembly.Set(name='Set-8', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#c ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-8'], u1=0.0, 
+    u2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-9', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#20 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf1=2000.0, cf2=-7500.0, 
+    createStepName='Step-1', distributionType=UNIFORM, field='', localCsys=None
+    , name='Load-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-9'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-10', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#40 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-2500.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-2', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-10'])
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 17928, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 20:59:52 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].sections['Truss'].setValues(area=20.0, material=
+    'Material-1')
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 7332, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 21:01:44 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].profiles['Ac'].setValues(a=4.0, b=16.0)
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 13360, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 21:03:08 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].boundaryConditions['BC-1'].setValues(ur3=UNSET)
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 15092, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 0.0, 'attempts': ' 1U', 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 0.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 
+    'equilibrium': 6})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 0.0, 'attempts': ' 2U', 
+    'timeIncrement': 0.25, 'increment': 1, 'stepTime': 0.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 
+    'equilibrium': 6})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 0.0, 'attempts': ' 3U', 
+    'timeIncrement': 0.0625, 'increment': 1, 'stepTime': 0.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 
+    'equilibrium': 6})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 0.0, 'attempts': ' 4U', 
+    'timeIncrement': 0.015625, 'increment': 1, 'stepTime': 0.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 
+    'equilibrium': 6})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-1-1.1 D.O.F. 6 ratio = 59.6439E+12 .', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 0.0, 'attempts': ' 5U', 
+    'timeIncrement': 0.00390625, 'increment': 1, 'stepTime': 0.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 6, 'phase': STANDARD_PHASE, 
+    'equilibrium': 6})
+mdb.jobs['63']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 'jobName': '63'})
+mdb.jobs['63']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': '63'})
+mdb.jobs['63']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': '63'})
+mdb.models['Model-1'].boundaryConditions['BC-1'].setValues(ur3=0.0)
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 7348, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 21:05:36 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].profiles['Ac'].setValues(a=10.0, b=26.0)
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING SURFACE UNDER *SURFACE INTERACTION.', 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 13288, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 21:07:11 2021', 
+    'jobName': '63'})
+mdb.models['Model-1'].profiles['Ac'].setValues(t1=0.5)
+mdb.models['Model-1'].sections['Truss'].setValues(area=1.0, material=
+    'Material-1')
+mdb.jobs['63'].submit(consistencyChecking=OFF)
+mdb.jobs['63']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\63.odb', 'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 6860, 'jobName': '63'})
+mdb.jobs['63']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': '63'})
+mdb.jobs['63']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': '63', 'memory': 29.0})
+mdb.jobs['63']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': '63'})
+mdb.jobs['63']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': '63'})
+mdb.jobs['63']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': '63'})
+mdb.jobs['63']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': '63', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['63']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': '63'})
+mdb.jobs['63']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': '63'})
+mdb.jobs['63']._Message(JOB_COMPLETED, {'time': 'Sun Apr 25 21:08:16 2021', 
+    'jobName': '63'})
+# Save by ASUS on 2021_04_25-21.08.52; build 2020 2019_09_13-22.19.31 163176

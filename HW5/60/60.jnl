@@ -1,0 +1,501 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=400.0)
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
+    0.0, 170.0))
+mdb.models['Model-1'].sketches['__profile__'].VerticalConstraint(addUndoState=
+    False, entity=mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 140.0), point2=
+    (102.5, 140.0))
+mdb.models['Model-1'].sketches['__profile__'].HorizontalConstraint(
+    addUndoState=False, entity=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].PerpendicularConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].Line(point1=(0.0, 100.0), point2=
+    (60.0, 140.0))
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[2])
+mdb.models['Model-1'].sketches['__profile__'].CoincidentConstraint(
+    addUndoState=False, entity1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], entity2=
+    mdb.models['Model-1'].sketches['__profile__'].geometry[3])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    -83.1139907836914, 102.072059631348), value=187.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -40.2843399047852, 138.344299316406), value=29.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1])
+mdb.models['Model-1'].sketches['__profile__'].undo()
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -44.0495834350586, 151.5341796875), value=29.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[1], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].sketches['__profile__'].VerticalDimension(textPoint=(
+    -53.9333419799805, 116.204093933105), value=58.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[4])
+mdb.models['Model-1'].sketches['__profile__'].ObliqueDimension(textPoint=(
+    51.9641342163086, 175.558654785156), value=144.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[3])
+mdb.models['Model-1'].sketches['__profile__'].HorizontalDimension(textPoint=(
+    30.784631729126, 156.244873046875), value=58.0, vertex1=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[5], vertex2=
+    mdb.models['Model-1'].sketches['__profile__'].vertices[2])
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-1', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-1'].BaseWire(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((200000000000.0, 0.3), 
+    ))
+mdb.models['Model-1'].RectangularProfile(a=3.1496, b=0.216535, name=
+    'Profile-1')
+mdb.models['Model-1'].materials['Steel'].elastic.setValues(table=((29010000.0, 
+    0.3), ))
+mdb.models['Model-1'].BeamSection(consistentMassMatrix=False, integration=
+    DURING_ANALYSIS, material='Steel', name='Section-1', poissonRatio=0.0, 
+    profile='Profile-1', temperatureVar=LINEAR)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#2c ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#12 ]', 
+    ), ), name='Set-2')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-2'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-3')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-3'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#3f ]', 
+    ), ), name='Set-4')
+mdb.models['Model-1'].parts['Part-1'].assignBeamSectionOrientation(method=
+    N1_COSINES, n1=(0.0, 0.0, -1.0), region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-4'])
+mdb.models['Model-1'].parts['Part-1'].setElementType(elemTypes=(ElemType(
+    elemCode=B21, elemLibrary=STANDARD), ), regions=(
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#3f ]', 
+    ), ), ))
+mdb.models['Model-1'].parts['Part-1'].seedEdgeByNumber(constraint=FINER, edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#3f ]', 
+    ), ), number=4)
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=OFF, name='Part-1-1', 
+    part=mdb.models['Model-1'].parts['Part-1'])
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+mdb.models['Model-1'].rootAssembly.Set(name='Set-1', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#10 ]', ), ))
+mdb.models['Model-1'].ConcentratedForce(cf2=-6000.0, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', localCsys=None, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-1'])
+mdb.models['Model-1'].rootAssembly.Set(name='Set-2', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#28 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-1', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'], u1=0.0, 
+    u2=0.0, ur3=0.0)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-3', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'].vertices.getSequenceFromMask(
+    ('[#7 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'], u1=0.0, 
+    u2=0.0, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.generateMesh(regions=(
+    mdb.models['Model-1'].rootAssembly.instances['Part-1-1'], ))
+mdb.Job(atTime=None, contactPrint=OFF, description='11', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(HEADING, {'phase': BATCHPRE_PHASE, 'heading': '11', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 8052, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'memory': 29.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'increment': 1, 
+    'attempts': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 'jobName': 'Job-1', 
+    'severe': 0, 'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'jobName': 'Job-1', 
+    'time': 'Tue Apr 13 20:42:34 2021'})
+mdb.models['Model-1'].profiles['Profile-1'].setValues(a=7.874, b=1.1811)
+mdb.Job(name='Job-1-Copy', objectToCopy=mdb.jobs['Job-1'])
+mdb.jobs['Job-1-Copy'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1-Copy']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '11', 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1-Copy.odb', 
+    'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 9208, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'memory': 29.0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STATUS, {'totalTime': 1.0, 'increment': 1, 
+    'attempts': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 'jobName': 'Job-1-Copy', 
+    'severe': 0, 'equilibrium': 1})
+mdb.jobs['Job-1-Copy']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(JOB_COMPLETED, {'jobName': 'Job-1-Copy', 
+    'time': 'Tue Apr 13 21:40:25 2021'})
+mdb.models['Model-1'].profiles['Profile-1'].setValues(a=7.874, b=2.3622)
+mdb.Job(name='Job-1-Copy2', objectToCopy=mdb.jobs['Job-1'])
+mdb.jobs['Job-1-Copy2'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1-Copy2']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '11', 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1-Copy2.odb', 
+    'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 14856, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1-Copy2', 'memory': 29.0})
+mdb.jobs['Job-1-Copy2']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1-Copy2', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Job-1-Copy2']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy2'})
+mdb.jobs['Job-1-Copy2']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 13 21:45:39 2021', 'jobName': 'Job-1-Copy2'})
+mdb.models['Model-1'].BoxProfile(a=9.8425, b=5.9055, name='Profile-2', t1=
+    0.3543, uniformThickness=ON)
+mdb.Job(name='Job-1-Copy2-Copy', objectToCopy=mdb.jobs['Job-1-Copy2'])
+mdb.jobs['Job-1-Copy2-Copy'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1-Copy2-Copy']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(HEADING, {'phase': BATCHPRE_PHASE, 
+    'heading': '11', 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1-Copy2-Copy.odb', 
+    'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 7848, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 0, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1-Copy2-Copy', 'memory': 29.0})
+mdb.jobs['Job-1-Copy2-Copy']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8044.0, 
+    'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 
+    'step': 0, 'frame': 1, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1-Copy2-Copy', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Job-1-Copy2-Copy']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy2-Copy'})
+mdb.jobs['Job-1-Copy2-Copy']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 13 21:52:59 2021', 'jobName': 'Job-1-Copy2-Copy'})
+del mdb.models['Model-1'].profiles['Profile-2']
+mdb.models['Model-1'].profiles['Profile-1'].setValues(b=4.7244)
+del mdb.jobs['Job-1-Copy2-Copy']
+del mdb.jobs['Job-1']
+del mdb.jobs['Job-1-Copy']
+del mdb.jobs['Job-1-Copy2']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 18708, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 29.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Tue Apr 13 21:58:10 2021', 
+    'jobName': 'Job-1'})
+mdb.models['Model-1'].profiles['Profile-1'].setValues(b=6.7)
+mdb.Job(name='Job-1-Copy', objectToCopy=mdb.jobs['Job-1'])
+mdb.jobs['Job-1-Copy'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1-Copy']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\Job-1-Copy.odb', 
+    'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 16200, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1-Copy', 'memory': 29.0})
+mdb.jobs['Job-1-Copy']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1-Copy', 'severe': 0, 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'equilibrium': 1})
+mdb.jobs['Job-1-Copy']._Message(END_STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1-Copy'})
+mdb.jobs['Job-1-Copy']._Message(JOB_COMPLETED, {
+    'time': 'Tue Apr 13 22:00:27 2021', 'jobName': 'Job-1-Copy'})
+# Save by ASUS on 2021_04_13-22.11.37; build 2020 2019_09_13-22.19.31 163176
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[2]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0]
+del mdb.models['Model-1'].materials['Steel']
+del mdb.models['Model-1'].profiles['Profile-1']
+mdb.models['Model-1'].Material(name='Steel')
+mdb.models['Model-1'].materials['Steel'].Elastic(table=((29010000.0, 0.3), ))
+mdb.models['Model-1'].IProfile(b1=5.377, b2=5.377, h=12.0, l=6.0, name=
+    'Profile-1', t1=0.659, t2=0.659, t3=0.687)
+mdb.models['Model-1'].IProfile(b1=3.332, b2=3.332, h=6.0, l=3.0, name=
+    'Profile-2', t1=0.359, t2=0.359, t3=0.232)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#2c ]', 
+    ), ), name='Set-7')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-7'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#12 ]', 
+    ), ), name='Set-8')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-8'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-9')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-9'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[2]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[1]
+del mdb.models['Model-1'].parts['Part-1'].sectionAssignments[0]
+del mdb.models['Model-1'].sections['Section-1']
+mdb.models['Model-1'].BeamSection(consistentMassMatrix=False, integration=
+    DURING_ANALYSIS, material='Steel', name='Section-1', poissonRatio=0.0, 
+    profile='Profile-1', temperatureVar=LINEAR)
+mdb.models['Model-1'].BeamSection(consistentMassMatrix=False, integration=
+    DURING_ANALYSIS, material='Steel', name='Section-2', poissonRatio=0.0, 
+    profile='Profile-2', temperatureVar=LINEAR)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#2c ]', 
+    ), ), name='Set-10')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-10'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#12 ]', 
+    ), ), name='Set-11')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-11'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-1'].Set(edges=
+    mdb.models['Model-1'].parts['Part-1'].edges.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-12')
+mdb.models['Model-1'].parts['Part-1'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-1'].sets['Set-12'], sectionName=
+    'Section-2', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].rootAssembly.regenerate()
+del mdb.jobs['Job-1']
+del mdb.jobs['Job-1-Copy']
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, queue=None, resultsFormat=ODB, scratch='', type=
+    ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'Atabak', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\ASUS\\Desktop\\60\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'Atabak', 'handle': 20824, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 29.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8044.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 22.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Tue Apr 13 22:42:17 2021', 
+    'jobName': 'Job-1'})
+# Save by ASUS on 2021_04_13-22.43.20; build 2020 2019_09_13-22.19.31 163176
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='Job-1', toName='60')
+# Save by ASUS on 2021_04_25-16.46.52; build 2020 2019_09_13-22.19.31 163176
